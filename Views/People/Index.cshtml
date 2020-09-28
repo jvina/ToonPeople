@@ -9,6 +9,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.LastName)
             </th>
             <th>
@@ -29,29 +32,32 @@
     <tbody>
 @{ var rowColor = "a9a9a9"; }
 @foreach (var item in Model) { 
-        <tr>
-            <td style="background-color:@rowColor;">
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td style="background-color:@rowColor;">
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td style="background-color:@rowColor;">
-                @Html.DisplayFor(modelItem => item.Occupation)
-            </td>
-            <td style="background-color:@rowColor;">
-                @Html.DisplayFor(modelItem => item.Gender)
-            </td>
-            <td style="background-color:@rowColor;">
-                <img src="@Html.DisplayFor(modelItem => item.PictureUrl)" height="50" />
-            </td>
-        </tr>
-        if (@rowColor.Equals("#a9a9a9")){
-            rowColor = "#ffffff";
-        } 
-        else{
-            rowColor = "#a9a9a9";
-        }
+    <tr>
+        <td style="background-color:@rowColor;">
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td style="background-color:@rowColor;">
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td style="background-color:@rowColor;">
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td style="background-color:@rowColor;">
+            @Html.DisplayFor(modelItem => item.Occupation)
+        </td>
+        <td style="background-color:@rowColor;">
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td style="background-color:@rowColor;">
+            <img src="@Html.DisplayFor(modelItem => item.PictureUrl)" alt="flintstone" height="50" />
+        </td>
+    </tr>
+    if (@rowColor.Equals("#a9a9a9")){
+        rowColor = "#ffffff";
+    } 
+    else {
+        rowColor = "#a9a9a9";
+    }
 }
     </tbody>
 </table>
