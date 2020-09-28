@@ -5,11 +5,10 @@
 }
 
 <h1>Toon People</h1>
-@{ var rowColor = "a9a9a9"; }
 <table class="table">
     <thead>
         <tr>
-            <th style="background-color:@rowColor;">
+            <th>
                 @Html.DisplayNameFor(model => model.Id)
             </th>
             <th>
@@ -31,6 +30,7 @@
         </tr>
     </thead>
     <tbody>
+@{ var rowColor = "a9a9a9"; }
 @foreach (var item in Model) { 
     <tr>
         <td style="background-color:@rowColor;">
